@@ -29,12 +29,12 @@ if (fs.existsSync(jsonPath)) {
 		port: Number(env('PORT', '4000')),
 		noindex: env('NOINDEX', 'true') === 'true',
 		readonly: env('READONLY', 'false') === 'true',
-		webservice: env('WEBSERVICE_URL', {
+		webservice: env('WEBSERVICE_URL') || {
 			database: env('WEBSERVICE_DATABASE', 'mongodb+srv://Devfi:Devfi@1234@cluster0.zl8gnau.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'),
 			host: env('WEBSERVICE_HOST', '0.0.0.0'),
 			port: Number(env('WEBSERVICE_PORT', '3000')),
 			cron: env('WEBSERVICE_CRON', false)
-		})
+		}
 	};
 }
 
