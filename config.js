@@ -34,7 +34,7 @@ if (fs.existsSync(jsonPath)) {
 			host: env('WEBSERVICE_HOST', '0.0.0.0'),
 			port: Number(env('WEBSERVICE_PORT', '3000')),
 			cron: env('WEBSERVICE_CRON', false),
-			timeout: Number(env('WEBSERVICE_TIMEOUT', '60000'))
+			timeout: Number(env('WEBSERVICE_TIMEOUT', '6000'))
 		}
 	};
 }
