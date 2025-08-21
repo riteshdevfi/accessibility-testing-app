@@ -54,6 +54,6 @@
     "test": "npm run test:integration",
     "test:integration": "mocha 'test/integration/**/*.js' --recursive --timeout 20000 --slow 4000",
     "lint": "eslint .",
-    "postinstall": "apt-get install --fix-missing -y libnss3 libxss1 libasound2 libatk-bridge2.0-0 libgtk-3-0 libgconf-2-4 libx11-xcb1 libxkbcommon0 libnspr4 libgbm1 libxcomposite1 libdrm2 libxext6 libxfixes3 libxdmcp6 libxrandr2 libxrender1 libxtst6 libx11-6 libxshmfence1 libexpat1 libxft2 libfreetype6 libfontconfig1 libjpeg-turbo-progs libpng16-16 libwebp-dev libglib2.0-0 libharfbuzz0b libicu72 libpango-1.0-0 libpangocairo-1.0-0 libpangoxft-1.0-0 libxkbcommon-x11-0 libwayland-client0 libwayland-egl1 libwayland-server0 ca-certificates fonts-liberation gconf-service libappindicator1 libindicator3-dev lsb-release wget xdg-utils"
+    "postinstall": "sudo apt-get install --fix-missing -y libnss3 libxss1 libasound2 libatk-bridge2.0-0 libgtk-3-0 libgconf-2-4 libx11-xcb1 libxkbcommon0 libnspr4 libgbm1 libxcomposite1 libdrm2 libxext6 libxfixes3 libxdmcp6 libxrandr2 libxrender1 libxtst6 libx11-6 libxshmfence1 libexpat1 libxft2 libfreetype6 libfontconfig1 libjpeg-turbo-progs libpng16-16 libwebp-dev libglib2.0-0 libharfbuzz0b libicu72 libpango-1.0-0 libpangocairo-1.0-0 libpangoxft-1.0-0 libxkbcommon-x11-0 libwayland-client0 libwayland-egl1 libwayland-server0 ca-certificates fonts-liberation gconf-service libappindicator1 libindicator3-dev lsb-release wget xdg-utils"
   }
 }
