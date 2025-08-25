@@ -17,6 +17,7 @@
 
 const getStandards = require('../data/standards');
 const httpHeaders = require('http-headers');
+const logger = require('../enhanced-logging');
 
 module.exports = function route(app) {
 	app.express.get('/new', (request, response) => {
@@ -34,15 +35,53 @@ module.exports = function route(app) {
 	});
 
 	app.express.post('/new', (request, response) => {
+		logger.info('Creating new task', {
+			requestId: request.id,
+			taskName: request.body.name,
+			taskUrl: request.body.url,
+			standard: request.body.standard
+		});
+
 		const parsedActions = parseActions(request.body.actions);
 		const parsedHeaders = request.body.headers && httpHeaders(request.body.headers, true);
 
 		const newTask = createNewTask(request, parsedActions, parsedHeaders);
 
+		logger.info('Task data prepared', {
+			requestId: request.id,
+			taskData: {
+				name: newTask.name,
+				url: newTask.url,
+				standard: newTask.standard,
+				timeout: newTask.timeout,
+				hasActions: !!newTask.actions && newTask.actions.length > 0,
+				hasHeaders: !!newTask.headers
+			}
+		});
+
 		app.webservice.tasks.create(newTask, (error, task) => {
 			if (!error) {
+				logger.objectId('CREATED', task.id, {
+					requestId: request.id,
+					taskName: task.name,
+					taskUrl: task.url,
+					standard: task.standard
+				});
+				
+				logger.info('Task created successfully', {
+					requestId: request.id,
+					objectId: task.id,
+					taskName: task.name
+				});
+				
 				return response.redirect(`/${task.id}?added`);
 			}
+
+			logger.error('Failed to create task', error, {
+				requestId: request.id,
+				taskName: newTask.name,
+				taskUrl: newTask.url
+			});
 
 			const standards = getStandards().map(standard => {
 				if (standard.title === newTask.standard) {

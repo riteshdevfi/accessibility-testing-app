@@ -1,0 +1,6 @@
+{"timestamp":"2025-08-25T17:45:08.454Z","level":"INFO","message":"Fetching task","data":{"requestId":"Zkyk2Lc25U","objectId":"68a76a1921c651005a22bab9"},"requestId":"Zkyk2Lc25U"}
+{"timestamp":"2025-08-25T17:45:08.488Z","level":"INFO","message":"Task fetched successfully","data":{"requestId":"Zkyk2Lc25U","objectId":"68a76a1921c651005a22bab9","taskName":"Devfi","taskUrl":"https://docs.pydantic.dev/latest/"},"requestId":"Zkyk2Lc25U"}
+{"timestamp":"2025-08-25T17:45:10.189Z","level":"INFO","message":"Starting task run","data":{"requestId":"YLmJIbBF0p","objectId":"68a76a1921c651005a22bab9"},"requestId":"YLmJIbBF0p"}
+{"timestamp":"2025-08-25T17:45:18.855Z","level":"INFO","message":"Task run started successfully","data":{"requestId":"YLmJIbBF0p","objectId":"68a76a1921c651005a22bab9"},"requestId":"YLmJIbBF0p"}
+{"timestamp":"2025-08-25T17:45:18.866Z","level":"INFO","message":"Fetching task","data":{"requestId":"pmIqyDMqNK","objectId":"68a76a1921c651005a22bab9"},"requestId":"pmIqyDMqNK"}
+{"timestamp":"2025-08-25T17:45:18.959Z","level":"INFO","message":"Task fetched successfully","data":{"requestId":"pmIqyDMqNK","objectId":"68a76a1921c651005a22bab9","taskName":"Devfi","taskUrl":"https://docs.pydantic.dev/latest/"},"requestId":"pmIqyDMqNK"}
