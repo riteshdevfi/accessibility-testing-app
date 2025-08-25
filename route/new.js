@@ -54,6 +54,7 @@ module.exports = function route(app) {
 				url: newTask.url,
 				standard: newTask.standard,
 				timeout: newTask.timeout,
+				timeoutInMinutes: Math.round(newTask.timeout / 60000),
 				hasActions: !!newTask.actions && newTask.actions.length > 0,
 				hasHeaders: !!newTask.headers
 			}
@@ -125,7 +126,7 @@ function createNewTask({body}, actions, headers) {
 		url: body.url,
 		standard: body.standard,
 		ignore: body.ignore || [],
-		timeout: body.timeout || undefined,
+		timeout: body.timeout || 300000, // Default to 5 minutes (300000ms)
 		wait: body.wait || undefined,
 		actions,
 		username: body.username || undefined,
