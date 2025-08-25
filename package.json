@@ -51,6 +51,8 @@
   },
   "scripts": {
     "start": "node index.js",
+    "fix-tasks": "node fix-existing-tasks.js",
+    "poststart": "node fix-existing-tasks.js",
     "test": "npm run test:integration",
     "test:integration": "mocha 'test/integration/**/*.js' --recursive --timeout 20000 --slow 4000",
     "lint": "eslint ."
